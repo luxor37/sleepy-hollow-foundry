@@ -1,0 +1,36 @@
+{
+  "name": "Stealth",
+  "type": "skill",
+  "_id": "UstjEaemdjdqJqBa",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Stealth covers your ability to move unseen and unheard, whether sneaking past guards, hiding from pursuers, or pickpocketing without being noticed.</p><p>You make a <strong>Stealth test</strong> when attempting to conceal your presence, evade detection, or maneuver covertly through hostile territory. Successes can allow you to avoid detection, surprise enemies, or accomplish tasks without drawing attention.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Avoid Detection</strong> – Slip past guards or bypass surveillance undetected.</li><li><strong>Ambush</strong> – Gain advantage in combat by striking from an unseen position.</li><li><strong>Conceal Objects</strong> – Hide items or contraband on your person without discovery.</li><li><strong>Eavesdrop</strong> – Listen in on conversations or gather intel without being noticed.</li><li><strong>Navigate Obstacles</strong> – Move through challenging terrain or urban environments quietly.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "agility",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740602481231,
+    "modifiedTime": 1740602492082,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!UstjEaemdjdqJqBa"
+}

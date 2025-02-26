@@ -1,0 +1,36 @@
+{
+  "name": "Observation",
+  "type": "skill",
+  "_id": "ktm7Y3HsrJ4lw607",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Observation enables you to notice details, spot hidden threats, or detect clues in your surroundings.</p><p>You make an <strong>Observation test</strong> to passively notice details or actively search for hidden dangers or valuable information. If multiple characters are involved in searching, you can transfer successes to aid others in their observations.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Spot Hidden Threats</strong> – Identify concealed enemies or traps.</li><li><strong>Detect Clues</strong> – Uncover hidden or subtle hints that others might miss.</li><li><strong>Analyze Environment</strong> – Assess environmental hazards or advantageous features.</li><li><strong>Read Situations</strong> – Gauge the mood or intentions of individuals through subtle cues.</li><li><strong>Track Movements</strong> – Follow trails or footprints left by creatures or people.</li><li><strong>Identify Patterns</strong> – Recognize recurring motifs or sequences in your surroundings.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "wits",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740602404147,
+    "modifiedTime": 1740602421665,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!ktm7Y3HsrJ4lw607"
+}

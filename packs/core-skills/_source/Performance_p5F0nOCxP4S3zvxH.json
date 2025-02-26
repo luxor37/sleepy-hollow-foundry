@@ -1,0 +1,36 @@
+{
+  "name": "Performance",
+  "type": "skill",
+  "_id": "p5F0nOCxP4S3zvxH",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Performance encompasses your ability to entertain through music, storytelling, or acting. It allows you to soothe tensions, distract enemies, or captivate an audience.</p><p>You make a <strong>Performance test</strong> to deliver a compelling performance, whether in a tavern, court, or campfire circle. Successes can be transferred to bolster the mood of listeners or influence their emotions positively.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Soothe Tensions</strong> – Calm agitated individuals or diffuse hostile encounters.</li><li><strong>Distract Enemies</strong> – Divert attention away from allies or deceive opponents with a convincing performance.</li><li><strong>Impress an Audience</strong> – Gain favor with spectators or sway their opinions through charismatic expression.</li><li><strong>Convey Emotion</strong> – Evoke specific feelings such as joy, sorrow, or fear through your performance.</li><li><strong>Create Atmosphere</strong> – Enhance the ambiance of a scene or establish a memorable presence.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "empathy",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740602521073,
+    "modifiedTime": 1740602537075,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!p5F0nOCxP4S3zvxH"
+}

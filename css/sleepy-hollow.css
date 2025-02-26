@@ -1,0 +1,1121 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;800&family=Cairo:wght@400;600;700&display=swap");
+/*$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Roboto', sans-serif;*/
+/* SH FONT SYMBOLS*/
+@font-face {
+  font-family: 'sh';
+  src: url("../fonts/sh.eot");
+  src: url("../fonts/sh.eot?#iefix") format("embedded-opentype"), url("../fonts/sh.woff") format("woff"), url("../fonts/sh.ttf") format("truetype"), url("../fonts/sh.svg#sh") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*='sh-']:before {
+  display: inline-block;
+  font-family: 'sh';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sh-radioactive:before {
+  content: '\0041';
+}
+
+.sh-biohazard:before {
+  content: '\0042';
+}
+
+.sh-explosion:before {
+  content: '\0043';
+}
+
+@font-face {
+  font-family: 'BigNoodleTitling';
+  src: url("../fonts/big_noodle_titling.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*BROWNS*/
+/*GREENS*/
+/*BLUES*/
+/*TEAL*/
+/*PURPLE*/
+/* Global styles */
+:root {
+  scrollbar-color: unset;
+}
+
+.window-app {
+  font-family: "Karla", sans-serif;
+  /*.editor-content{
+        height:100%;
+    }*/
+}
+
+.window-app .window-content {
+  background-image: url(../ui/mutant-sheet-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sheet.actor .window-content {
+  background: url("../ui/mutant-sheet-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*ROLL DIALOG*/
+.roll-dialog {
+  min-height: 65px;
+}
+
+.roll-dialog .dice-row {
+  margin-bottom: 5px;
+}
+
+.roll-dialog .dice-image {
+  max-width: 20px;
+  max-height: 20px;
+  border: none;
+}
+
+.roll-dialog label {
+  text-transform: capitalize;
+}
+
+.roll-dialog ul.roll-bonus-list {
+  list-style: none;
+  padding: 5px;
+  border: 1px solid #999;
+  font-size: 0.7rem;
+}
+
+.grid,
+.grid-2col {
+  display: grid;
+  grid-column: span 2 / span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0;
+}
+
+.grid-3col {
+  grid-column: span 3 / span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+  grid-column: span 4 / span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+  grid-column: span 5 / span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col {
+  grid-column: span 5 / span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-7col {
+  grid-column: span 7 / span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+  grid-column: span 8 / span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+  grid-column: span 9 / span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+  grid-column: span 10 / span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+  grid-column: span 11 / span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+  grid-column: span 12 / span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #999;
+}
+
+.flex-group-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.flex-group-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.grid-odd-raw-color-shift div {
+  align-items: center;
+}
+
+.grid-odd-raw-color-shift div:nth-child(odd) {
+  background-color: #0000000c;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+#chat-log .message {
+  background: white;
+}
+
+.dice-tooltip .dice-rolls .roll.max {
+  /* color: #18520b; */
+  filter: none;
+}
+
+.dice-tooltip .dice-rolls .roll.min {
+  /* color: #18520b; */
+  filter: none;
+}
+
+.sh.chat-item {
+  background-color: white;
+  background-image: url("../ui/mutant-sheet-bg.jpg");
+  margin: 0 -5px 0 -5px;
+}
+
+.sh.chat-item .border {
+  padding: 10px;
+}
+
+.sh.chat-item strong {
+  text-transform: uppercase;
+}
+
+.sh.chat-item h2 {
+  font-family: "Karla", sans-serif;
+}
+
+.sh.chat-item h3 {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.sh.chat-item h4 {
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.sh.chat-item .dices-result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.sh.chat-item .dices-result img {
+  border: 0;
+  width: 30px;
+  height: 30px;
+  margin: 0 2px 2px 0;
+}
+
+.sh.chat-item i {
+  margin-left: 2px;
+}
+
+.sh.chat-item .item-img {
+  background: radial-gradient(closest-side, var(--color-highlight) 0%, transparent 100%);
+  border: 0;
+  display: block;
+  margin: 0 auto 8px;
+  max-height: 64px;
+  width: auto;
+}
+
+.sh.chat-item p {
+  font-family: "Karla", sans-serif;
+  margin: 0 0 4px;
+}
+
+/* Styles limited to sleepy-hollow sheets */
+.sleepy-hollow {
+  /*SPACESHIP*/
+  /* .tabs {
+   .item {
+     background: rgba(0, 0, 0, 0.125);
+     border: 1px solid;
+     border-radius: 4px;
+     margin: 0 10px 0;
+     padding: 8px 4px;
+
+     &:hover,
+     &:focus {
+       background: rgba(0, 0, 0, 0.125);
+     }
+
+     &.active {
+       background: transparent;
+     }
+   }
+ }*/
+}
+
+.sleepy-hollow .flex {
+  display: flex;
+}
+
+.sleepy-hollow .row {
+  flex-direction: row;
+}
+
+.sleepy-hollow .column {
+  flex-direction: column;
+}
+
+.sleepy-hollow .full {
+  width: 100%;
+  height: 100%;
+}
+
+.sleepy-hollow .wrap {
+  flex-wrap: wrap;
+}
+
+.sleepy-hollow .half {
+  flex: 0 0 50%;
+}
+
+.sleepy-hollow .center {
+  text-align: center;
+}
+
+.sleepy-hollow .margin {
+  margin: 5px;
+}
+
+.sleepy-hollow .grow {
+  flex-grow: 1;
+}
+
+.sleepy-hollow .align-center {
+  align-items: center;
+}
+
+.sleepy-hollow .align-end {
+  align-items: flex-end;
+}
+
+.sleepy-hollow .space-around {
+  justify-content: space-around;
+}
+
+.sleepy-hollow .space-between {
+  justify-content: space-between;
+}
+
+.sleepy-hollow .item-form {
+  font-family: "Karla", sans-serif;
+}
+
+.sleepy-hollow ol {
+  margin: 0;
+  list-style: none;
+}
+
+.sleepy-hollow input[type="checkbox"]:checked, .sleepy-hollow input[type="radio"]:checked {
+  accent-color: #fff100;
+}
+
+.sleepy-hollow .sheet-header,
+.sleepy-hollow .actor-header {
+  flex: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start !important;
+}
+
+.sleepy-hollow .sheet-header.npc,
+.sleepy-hollow .actor-header.npc {
+  flex: 0 0 110px;
+}
+
+.sleepy-hollow .sheet-header.npc h1.charname,
+.sleepy-hollow .actor-header.npc h1.charname {
+  height: 1em;
+}
+
+.sleepy-hollow .sheet-header .profile-img,
+.sleepy-hollow .actor-header .profile-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.sleepy-hollow .sheet-header .header-fields,
+.sleepy-hollow .actor-header .header-fields {
+  flex: 1;
+}
+
+.sleepy-hollow .sheet-header h1.charname,
+.sleepy-hollow .actor-header h1.charname {
+  height: 1.2em;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+}
+
+.sleepy-hollow .sheet-header h1.charname input,
+.sleepy-hollow .actor-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.sleepy-hollow .sheet-tabs {
+  flex: 0;
+  margin-bottom: 5px;
+}
+
+.sleepy-hollow .sheet-body,
+.sleepy-hollow .sheet-body .tab,
+.sleepy-hollow .sheet-body .tab .editor {
+  height: 100%;
+}
+
+.sleepy-hollow .info,
+.sleepy-hollow .info .description,
+.sleepy-hollow .info .description .editor {
+  height: 180px;
+}
+
+.sleepy-hollow .info-mid,
+.sleepy-hollow .info-mid .description,
+.sleepy-hollow .info-mid .description .editor {
+  height: 280px;
+}
+
+.sleepy-hollow .info-high,
+.sleepy-hollow .info-high .description,
+.sleepy-hollow .info-high .description .editor {
+  height: 380px;
+}
+
+.sleepy-hollow .rollable:hover, .sleepy-hollow .rollable:focus,
+.sleepy-hollow a:hover,
+.sleepy-hollow a:focus {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.sleepy-hollow .attribute-name {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.sleepy-hollow .gear-section {
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.sleepy-hollow .gear-section .col1 {
+  grid-column: 1 / span 1;
+}
+
+.sleepy-hollow .gear-section .col2 {
+  grid-column: 2 / span 4;
+}
+
+.sleepy-hollow .tox .tox-editor-container {
+  background: #fff;
+}
+
+.sleepy-hollow .tox .tox-edit-area {
+  padding: 0 8px;
+}
+
+.sleepy-hollow .overlay {
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  top: 5%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.sleepy-hollow .viewable,
+.sleepy-hollow .chatable,
+.sleepy-hollow .item-create,
+.sleepy-hollow .item-broken {
+  cursor: pointer;
+}
+
+.sleepy-hollow .short-input {
+  max-width: 3em;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.sleepy-hollow .short-input-2em {
+  max-width: 2em;
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding: 0 0;
+  margin-right: 0.5em;
+  background-color: white;
+}
+
+.sleepy-hollow .short-input-2em.rot {
+  background-size: cover;
+  background-color: #f3f100;
+  font-weight: 500;
+  border: dotted 1px black;
+}
+
+.sleepy-hollow .num-value-1rem {
+  max-width: 1.2em;
+  max-height: 1.2rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
+  padding: 0;
+}
+
+.sleepy-hollow .item-create {
+  text-align: right;
+}
+
+.sleepy-hollow .checkbox-label {
+  display: inline-block;
+  padding-left: 30px;
+  margin-bottom: 5px;
+  position: relative;
+  vertical-align: middle;
+}
+
+.sleepy-hollow .checkbox-label input {
+  position: absolute;
+  left: 0;
+  top: -3px;
+  vertical-align: middle;
+}
+
+.sleepy-hollow .pick-npc {
+  height: 100%;
+  background-image: url(../ui/mutant-sheet-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sleepy-hollow .pick-npc a {
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #eeeeee;
+  color: #333333;
+  padding: 20px 30px 20px 30px;
+  border: 1px solid #cccccc;
+}
+
+.sleepy-hollow input.nolabel {
+  border: none;
+  border-radius: unset;
+  border-bottom: 1px solid;
+  margin-bottom: 2px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.sleepy-hollow ::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.sleepy-hollow .header-fields .row1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin-bottom: 5px;
+}
+
+.sleepy-hollow .header-fields .row1 :nth-child(1) {
+  grid-column: 1 / span 3;
+}
+
+.sleepy-hollow .header-fields .row1 :nth-child(2) {
+  grid-column: 4 / span 2;
+}
+
+.sleepy-hollow .header-fields .row1 :nth-child(3) {
+  grid-column: 6 / span 1;
+}
+
+.sleepy-hollow .header-fields .row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin-bottom: 5px;
+}
+
+.sleepy-hollow .header-fields .row2 :nth-child(1) {
+  grid-column: 1 / span 3;
+}
+
+.sleepy-hollow .header-fields .row2 :nth-child(2) {
+  grid-column: 4 / span 2;
+}
+
+.sleepy-hollow .header-fields .row2 :nth-child(3) {
+  grid-column: 6 / span 1;
+}
+
+.sleepy-hollow .header-fields .row3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin-bottom: 5px;
+}
+
+.sleepy-hollow .header-fields .row3 :nth-child(1) {
+  grid-column: 1 / span 3;
+}
+
+.sleepy-hollow .header-fields .row3 :nth-child(2) {
+  grid-column: 4 / span 1;
+}
+
+.sleepy-hollow .header-fields .row3 :nth-child(3) {
+  grid-column: 5 / span 2;
+}
+
+.sleepy-hollow .rot-box,
+.sleepy-hollow .armor-box {
+  border: 1px solid;
+  border-bottom: 1px solid !important;
+  min-height: 36px !important;
+  padding: 0.3em 0 0.3em 0;
+  line-height: 14px;
+}
+
+.sleepy-hollow .rot-box img,
+.sleepy-hollow .armor-box img {
+  border: none;
+  width: 26px;
+  height: 26px;
+}
+
+.sleepy-hollow .rot-box .rot-button,
+.sleepy-hollow .armor-box .rot-button {
+  cursor: pointer;
+}
+
+.sleepy-hollow .item-attr-row {
+  margin-bottom: 10px;
+}
+
+.sleepy-hollow .know-nature {
+  background-image: url(../ui/know-nature-circle.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  max-width: 70px;
+}
+
+.sleepy-hollow .know-nature input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 22px;
+}
+
+.sleepy-hollow .box-encumbrance {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-top: 0;
+  padding: 5px;
+  color: black;
+  background-color: white;
+}
+
+.sleepy-hollow .box-encumbrance.encumbered {
+  color: white;
+  background-color: red;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-top: 0;
+}
+
+.sleepy-hollow .effect-textarea {
+  resize: none;
+  overflow: auto;
+}
+
+.sleepy-hollow .input-underline {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid;
+  background-color: unset;
+}
+
+.sleepy-hollow .npc-name-rank {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sleepy-hollow .npc-name-rank .npc-name {
+  flex: 2;
+}
+
+.sleepy-hollow .npc-name-rank .npc-rank {
+  margin-left: 1em;
+  flex: 1;
+}
+
+.sleepy-hollow .npc-name-rank .npc-rank input {
+  text-align: center;
+}
+
+.sleepy-hollow .ark-header {
+  display: flex;
+  flex: 0 0 160px;
+  flex-direction: row;
+}
+
+.sleepy-hollow .ark-header img {
+  width: 120px;
+  height: 120px;
+  margin-right: 10px;
+}
+
+.sleepy-hollow .ark-header h1.charname {
+  height: 1.2em;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+}
+
+.sleepy-hollow .ark-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.sleepy-hollow .ark-header .header-fields {
+  margin-right: 5px;
+}
+
+.sleepy-hollow .ark-header .dev-box {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  flex-grow: 1;
+  border: 1px solid #333333;
+}
+
+.sleepy-hollow .ark-header .dev-box div:nth-child(even) {
+  background: #f0eeeb;
+}
+
+.sleepy-hollow .ark-header .dev-box .title-box {
+  display: flex;
+  min-height: 32px;
+  align-items: center;
+  background-color: #2e2c2a;
+  color: blanchedalmond;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 5px;
+}
+
+.sleepy-hollow .ark-header .dev-box .resource {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.sleepy-hollow .ark-header .dev-box .resource input {
+  max-width: 3em;
+  text-align: center;
+}
+
+.sleepy-hollow .projects-box .projects-box-header {
+  padding: 5px !important;
+  background-color: #2e2c2a;
+  color: blanchedalmond;
+}
+
+.sleepy-hollow .projects-box .project {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.sleepy-hollow .boss-box {
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #7e7e7e;
+}
+
+.sleepy-hollow .boss-box .boss-name {
+  font-weight: bold;
+}
+
+.sleepy-hollow .boss-box textarea {
+  resize: vertical;
+  min-height: 5.5em;
+  border-color: #cccccc;
+}
+
+.sleepy-hollow .drop-zone-for-occupants {
+  flex-wrap: wrap;
+}
+
+.sleepy-hollow .drop-zone-for-occupants .occupant {
+  background-color: #eeeeee;
+}
+
+.sleepy-hollow .drop-zone-for-occupants .occupant .occupant-image {
+  width: 50px;
+  cursor: pointer;
+}
+
+.sleepy-hollow .drop-zone-for-occupants .occupant .occupant-delete {
+  cursor: pointer;
+}
+
+.sleepy-hollow .ship-skill-list {
+  font-size: 0.7rem;
+}
+
+.sleepy-hollow .spaceship-resource-row-header {
+  padding: 0 0.5rem;
+  background-color: #342950;
+  color: #e2eaf4;
+}
+
+.sleepy-hollow .spaceship-resource-row {
+  padding: 0 0.5rem;
+}
+
+.sleepy-hollow .odd-child {
+  background-color: #e2eaf4;
+  min-height: 2.2rem;
+}
+
+.sleepy-hollow .textarea-box {
+  border: 1px solid black;
+  margin-bottom: 0.2rem;
+  padding: 0.2rem;
+}
+
+.sleepy-hollow .textarea-box textarea {
+  border: none;
+  background-color: #e2eaf4;
+  resize: none;
+  overflow: auto;
+}
+
+.sleepy-hollow .button-roll img, .sleepy-hollow .button-push img {
+  vertical-align: middle;
+  border: none;
+  max-width: 1rem;
+  margin-right: 0.2rem;
+}
+
+.sleepy-hollow .button-roll span, .sleepy-hollow .button-push span {
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+.sleepy-hollow .uppercase {
+  text-transform: uppercase;
+}
+
+.sleepy-hollow .margin-top {
+  margin-top: 5px;
+}
+
+.sleepy-hollow .margin-right {
+  margin-right: 5px;
+}
+
+.sleepy-hollow .margin-bottom {
+  margin-bottom: 5px;
+}
+
+.sleepy-hollow .margin-left {
+  margin-left: 5px;
+}
+
+.sleepy-hollow .size12 {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.sleepy-hollow .resource-label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sleepy-hollow .tabs {
+  height: 40px;
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+}
+
+.sleepy-hollow .tabs .item {
+  line-height: 40px;
+  line-height: 23px;
+  font-family: 'BigNoodleTitling';
+  font-size: 1.3rem;
+}
+
+.sleepy-hollow .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
+}
+
+.sleepy-hollow .box-item {
+  min-height: 30px;
+  padding: 0.3em 0 0.3em 0;
+  line-height: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  list-style: none;
+}
+
+.sleepy-hollow .box-item.physical .item-name {
+  flex-basis: 45%;
+}
+
+.sleepy-hollow .box-item.physical .item-controls {
+  flex-basis: 80px;
+}
+
+.sleepy-hollow .box-item.resource .item-name {
+  flex-basis: 60%;
+}
+
+.sleepy-hollow .box-item.header {
+  color: ghostwhite;
+  font-weight: 800;
+  border: 1px solid black;
+}
+
+.sleepy-hollow .box-item.header.mutant {
+  background-image: url("../ui/box-header-brown.png");
+}
+
+.sleepy-hollow .box-item.header.animal {
+  background-image: url("../ui/box-header-green.png");
+}
+
+.sleepy-hollow .box-item.header.robot {
+  background-image: url("../ui/box-header-blue.png");
+}
+
+.sleepy-hollow .box-item.header.human {
+  background-image: url("../ui/box-header-tile.png");
+}
+
+.sleepy-hollow .box-item.chassis .chassis-name {
+  padding-left: 0.5em;
+}
+
+.sleepy-hollow .box-item.chassis .chassis-armor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../ui/empty-shield-padded.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sleepy-hollow .box-item.chassis .chasis-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.sleepy-hollow .box-item.chassis .chasis-details :nth-child(1) {
+  grid-column: 1/ span 3;
+}
+
+.sleepy-hollow .box-item.chassis .chasis-details :nth-child(2) {
+  grid-column: 4/ span 1;
+}
+
+.sleepy-hollow .box-item .item-image {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5em;
+}
+
+.sleepy-hollow .box-item img {
+  display: block;
+}
+
+.sleepy-hollow .box-item .item-name {
+  flex-basis: 70%;
+  padding-left: 0.5em;
+}
+
+.sleepy-hollow .box-item .item-name.broken {
+  color: darkred;
+}
+
+.sleepy-hollow .box-item .item-values {
+  flex-basis: 30%;
+}
+
+.sleepy-hollow .box-item .item-controls {
+  text-align: right;
+  flex-basis: 30%;
+  padding-right: 0.5em;
+}
+
+.sleepy-hollow .box-item .right-element {
+  padding-right: 0.5em;
+}
+
+.sleepy-hollow .box-item .grid {
+  margin: 0;
+  grid-gap: 1px;
+}
+
+.sleepy-hollow .box-item #context-menu {
+  left: unset;
+  right: 0;
+  min-width: unset;
+  width: unset;
+}
+
+.sleepy-hollow .box-item #context-menu li.context-item {
+  line-height: 26px;
+}
+
+.sleepy-hollow .box-item #context-menu .context-items {
+  display: flex;
+}
+
+.sleepy-hollow .box-item .expand-down {
+  top: 3px !important;
+  right: 3px !important;
+  bottom: 0 !important;
+}
+
+.sleepy-hollow .box-item .expand-up {
+  top: 3px !important;
+  right: 3px !important;
+  bottom: 0 !important;
+}
+
+.sleepy-hollow .box-item .item-info {
+  background-color: #f0eeeb;
+  padding: 0.2rem 0;
+}
+
+.sleepy-hollow .box-list {
+  list-style: none;
+  padding: 0;
+  border: 1px solid black;
+  border-top: none;
+  margin-bottom: 5px;
+  min-height: 90px;
+  position: relative;
+}
+
+.sleepy-hollow .box-list.mutant {
+  background-color: #f0d5b7;
+}
+
+.sleepy-hollow .box-list.animal {
+  background-color: #dee9d3;
+}
+
+.sleepy-hollow .box-list.robot {
+  background-color: #e2eaf4;
+}
+
+.sleepy-hollow .box-list.human {
+  background-color: #e1ede9;
+}
+
+.sleepy-hollow .box-list.fixed-height {
+  height: 130px;
+  overflow: auto;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.sleepy-hollow .box-list.fixed-height textarea {
+  box-sizing: border-box;
+  height: 120px;
+  border: none;
+  resize: none;
+  font-family: "Karla", sans-serif;
+}
+
+.sleepy-hollow .box-list .box-item:last-child {
+  border: none;
+}
+
+.sleepy-hollow .box-list.conditions {
+  font-size: small;
+  min-height: 0px;
+  height: 70px;
+}
+
+.sleepy-hollow .box-list.conditions .grid {
+  grid-gap: 6px;
+  margin: 0;
+}
+
+.sleepy-hollow .item-unequipped {
+  color: rgba(0, 0, 0, 0.2);
+}
+/*# sourceMappingURL=sleepy-hollow.css.map */

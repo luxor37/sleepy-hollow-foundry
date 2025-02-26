@@ -1,0 +1,36 @@
+{
+  "name": "Mobility",
+  "type": "skill",
+  "_id": "rd6sZNDhk6l5auKf",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Mobility involves physical agility and coordination, essential for climbing, leaping across rooftops, or navigating difficult terrain swiftly and safely.</p><p>You make a <strong>Mobility test</strong> when attempting acrobatic maneuvers, escaping pursuit, or moving through hazardous environments. If multiple characters are involved in the same action, you can transfer successes to support others, enhancing their chances of success.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Quick Escape</strong> – Evade pursuit or flee danger swiftly.</li><li><strong>Athletic Feats</strong> – Perform impressive jumps or acrobatic stunts.</li><li><strong>Stealthy Movement</strong> – Move quietly and unnoticed through an area.</li><li><strong>Navigate Hazards</strong> – Maneuver through traps or obstacles without harm.</li><li><strong>Swift Climbing</strong> – Ascend or descend vertical surfaces with agility.</li><li><strong>Balance</strong> – Maintain stability on precarious or narrow surfaces.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "agility",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740602380774,
+    "modifiedTime": 1740602393614,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!rd6sZNDhk6l5auKf"
+}

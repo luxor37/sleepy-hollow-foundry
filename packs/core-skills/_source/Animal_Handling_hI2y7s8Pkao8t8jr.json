@@ -1,0 +1,36 @@
+{
+  "name": "Animal Handling",
+  "type": "skill",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Animal Handling covers your ability to interact with and manage animals—whether calming a frightened horse, training a hunting dog, or handling livestock without causing distress.</p><p>You make an <strong>Animal Handling test</strong> when you attempt to control, train, or calm an animal. If multiple people are working with the same animal, you can transfer your successes to others, improving their chances of success.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Soothe the Animal</strong> – Calm the animal completely, preventing it from causing any trouble.</li><li><strong>Train the Animal</strong> – Teach the animal a specific trick or behavior.</li><li><strong>Guide the Animal</strong> – Direct the animal to a specific location or task.</li><li><strong>Identify Traits</strong> – Recognize useful traits or conditions in the animal.</li><li><strong>Bond with the Animal</strong> – Establish a lasting bond, making future interactions easier.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "empathy",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740595782834,
+    "modifiedTime": 1740601966533,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_id": "hI2y7s8Pkao8t8jr",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "_key": "!items!hI2y7s8Pkao8t8jr"
+}

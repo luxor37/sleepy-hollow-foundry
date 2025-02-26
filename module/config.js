@@ -1,113 +1,62 @@
-export class MYZ {   
-    static STUNTS = {}
-
-    static SKILLKEYS = ["ANALYZE",
-        "ASSAULT",
-        "BREWPOTION",
-        "CALCULATE",
-        "CLEAN",
-        "COMMAND",
-        "COMMANDOFFICER",
-        "COMPREHEND",
-        "COORDINATE",
-        "DATAMINE",
-        "DOMINATE",
-        "DRIVE",
-        "ENDURE",
-        "ENLIGHTEN",
-        "FIGHT",
-        "FINDTHEPATH",
+export class SH {
+    static SKILLKEYS = [
+        "ANIMALHANDLING",
+        "CRAFTING",
         "FORCE",
-        "HEAL",
-        "HUNT",
-        "INFILTRATE",
-        "INSPIRE",
-        "INTERACT",
-        "INTIMIDATE",
-        "INVESTIGATE",
-        "JURYRIG",
-        "KNOWNATURE",
-        "KNOWTHEZONE",
-        "MAKEADEAL",
-        "MANIPULATE",
-        "MANIPULATEPROGRAM",
-        "MANUFACTURE",
-        "MEASUREENEMY",
-        "MOVE",
-        "OVERLOAD",
-        "PRESSON",
-        "PROSECUTE",
-        "PROTECT",
-        "QUESTION",
-        "RECYCLE",
-        "REPAIR",
-        "SCAN",
-        "SCAVENGE",
-        "SCOUT",
-        "SCRY",
-        "SENSEEMOTION",
-        "SHAKEITOFF",
-        "SHOOT",
-        "SICADOG",
-        "SNEAK",
-        "TARGET",
-        "TINKER"]
+        "HEALING",
+        "INSIGHT",
+        "LEADERSHIP",
+        "LOREKNOWLEDGE",
+        "MARKSMANSHIP",
+        "MELEE",
+        "MOBILITY",
+        "OBSERVATION",
+        "PERFORMANCE",
+        "PERSUASION",
+        "STEALTH",
+        "STAMINA",
+        "SURVIVAL"
+    ]
 
     static CREATURE_TYPES = {
-        "mutant":"MYZ.MUTANT",
-        "animal":"MYZ.ANIMAL",
-        "robot":"MYZ.ROBOT",
-        "human":"MYZ.HUMAN"
-    }
-    
-    static ATTRIBUTES = {
-        "strength":"MYZ.ATTRIBUTE_STRENGTH",
-        "agility":"MYZ.ATTRIBUTE_AGILITY",
-        "wits":"MYZ.ATTRIBUTE_WITS",
-        "empathy":"MYZ.ATTRIBUTE_EMPATHY"
+        "human": "SH.HUMAN"
     }
 
-    static ROBOT_LOCATIONS = {
-        "head":"MYZ.HEAD",
-        "torso":"MYZ.TORSO",
-        "undercarriage":"MYZ.UNDERCARRIAGE",
+    static ATTRIBUTES = {
+        "strength": "SH.ATTRIBUTE_STRENGTH_HUMAN",
+        "agility": "SH.ATTRIBUTE_AGILITY_HUMAN",
+        "wits": "SH.ATTRIBUTE_WITS_HUMAN",
+        "empathy": "SH.ATTRIBUTE_EMPATHY_HUMAN"
     }
 
     static RANGES = {
-        "range_arm":"MYZ.RANGE_ARM",
-        "range_near":"MYZ.RANGE_NEAR",
-        "range_short":"MYZ.RANGE_SHORT",
-        "range_long":"MYZ.RANGE_LONG",
-        "range_distant":"MYZ.RANGE_DISTANT"
+        "range_engaged": "SH.RANGE_ENGAGED",
+        "range_short": "SH.RANGE_SHORT",
+        "range_medium": "SH.RANGE_MEDIUM",
+        "range_long": "SH.RANGE_LONG",
+        "range_extreme": "SH.RANGE_EXTREME"
     }
 
     static ITEM_SIZES = {
-        "0.00": "MYZ.WEIGHT_TINY",
-        "0.25": "MYZ.WEIGHT_QUARTER",
-        "0.50": "MYZ.WEIGHT_LIGHT",
-        "1.00": "MYZ.WEIGHT_REGULAR",
-        "2.00": "MYZ.WEIGHT_HEAVY"
-    }   
+        "0.00": "SH.WEIGHT_TINY",
+        "0.25": "SH.WEIGHT_QUARTER",
+        "0.50": "SH.WEIGHT_LIGHT",
+        "1.00": "SH.WEIGHT_REGULAR",
+        "2.00": "SH.WEIGHT_HEAVY"
+    }
 
     static WEAPON_CATEGORIES = {
-        "melee":"MYZ.WEAPON_MELEE",
-        "ranged":"MYZ.WEAPON_RANGED"
+        "melee": "SH.WEAPON_MELEE",
+        "ranged": "SH.WEAPON_RANGED"
     }
 
     static ARMOR_TYPES = {
-        "armor": "MYZ.ARMOR_BODY",
-        "shield": "MYZ.ARMOR_SHIELD",
-    }
-    
-    static TALENT_CREATURE_TYPES = {
-        "mutant":"MYZ.TALENT_MUTANT",
-        "animal":"MYZ.TALENT_ANIMAL",
-        "robot":"MYZ.TALENT_ROBOT",
-        "human":"MYZ.TALENT_HUMAN"
+        "armor": "SH.ARMOR_BODY",
+        "shield": "SH.ARMOR_SHIELD",
     }
 
-    static TALENT_ROLE_TYPES = {
-        "general":"MYZ.GENERAL",
-        "role":"MYZ.ROLE"
+    static TALENT_CREATURE_TYPES = {
+        "human": "SH.TALENT_HUMAN",
+        "animal": "SH.TALENT_ANIMAL"
     }
 }

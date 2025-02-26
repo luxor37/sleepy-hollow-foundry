@@ -1,0 +1,36 @@
+{
+  "name": "Melee",
+  "type": "skill",
+  "_id": "q4z1APIjgLJfNvPN",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Melee covers hand-to-hand combat with fists, knives, or other melee weapons. It includes both attacking and defending against close-quarters assaults.</p><p>You make a <strong>Melee test</strong> when engaging an opponent in close combat or when trying to defend against a melee attack. If multiple people are fighting the same opponent, you may transfer your successes to others, improving their chances of success.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Increase Damage</strong> – Inflict additional harm on your target.</li><li><strong>Disarm</strong> – Knock a weapon or item from your opponent’s grasp.</li><li><strong>Grapple</strong> – Engage in a hold or wrestle to restrain the target.</li><li><strong>Trip</strong> – Knock the opponent off balance, causing them to fall.</li><li><strong>Push Back</strong> – Force the opponent to move back or away from you.</li><li><strong>Feint</strong> – Deceive the opponent, opening them up for a future attack.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "strength",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740602356701,
+    "modifiedTime": 1740602367196,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!q4z1APIjgLJfNvPN"
+}

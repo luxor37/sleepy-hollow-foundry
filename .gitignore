@@ -12,3 +12,5 @@ npm-debug.log
 *.rar
 
 foundry.js
+
+.DS_Store

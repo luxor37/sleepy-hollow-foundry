@@ -2,11 +2,11 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class MYZItemSheet extends ItemSheet {
+export class SHItemSheet extends ItemSheet {
     /** @override */
     static get defaultOptions() {
         return foundry.utils.mergeObject(super.defaultOptions, {
-            classes: ["mutant-year-zero", "sheet", "item"],
+            classes: ["sleepy-hollow", "sheet", "item"],
             width: 520,
             tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }],
         });
@@ -14,7 +14,7 @@ export class MYZItemSheet extends ItemSheet {
 
     /** @override */
     get template() {
-        const path = "systems/mutant-year-zero/templates/item";
+        const path = "systems/sleepy-hollow/templates/item";
         // Return a single sheet for all item types.
         // return `${path}/item-sheet.html`;
         // Alternatively, you could use the following return statement to do a
@@ -32,15 +32,15 @@ export class MYZItemSheet extends ItemSheet {
 
         foundry.utils.mergeObject(context, {
             source: source.system,
-            system: item.system,      
+            system: item.system,
             isEmbedded: item.isEmbedded,
-            type: item.type,      
+            type: item.type,
             flags: item.flags,
             descriptionHTML: await TextEditor.enrichHTML(item.system.description, {
-              secrets: item.isOwner,
-              async: true
+                secrets: item.isOwner,
+                async: true
             })
-          });
+        });
 
         // Retrieve the roll data for TinyMCE editors.
         context.rollData = {};
@@ -49,9 +49,9 @@ export class MYZItemSheet extends ItemSheet {
             context.rollData = actor.getRollData();
         }
 
-        context.MYZ = CONFIG.MYZ;
-        context.creatureAttributes = Object.fromEntries(Object.keys(CONFIG.MYZ.ATTRIBUTES).map(k => [k, `${CONFIG.MYZ.ATTRIBUTES[k]}_${source.system.creatureType}`.toUpperCase()]));
-        
+        context.SH = CONFIG.SH;
+        context.creatureAttributes = Object.fromEntries(Object.keys(CONFIG.SH.ATTRIBUTES).map(k => [k, `${CONFIG.SH.ATTRIBUTES[k]}_${source.system.creatureType}`.toUpperCase()]));
+
         return context;
     }
 
@@ -77,7 +77,7 @@ export class MYZItemSheet extends ItemSheet {
 
         // Roll handlers, click handlers, etc. would go here.
     }
-    
+
     _getHeaderButtons() {
         let buttons = super._getHeaderButtons();
         return [{

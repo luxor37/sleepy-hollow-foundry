@@ -1,0 +1,36 @@
+{
+  "name": "Force",
+  "type": "skill",
+  "_id": "eFYBXl4g9ZcnRBoK",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Force measures your raw physical strength, used for tasks such as lifting heavy objects, breaking down doors, or overpowering opponents in a grapple.</p><p>You make a <strong>Force test</strong> when you attempt to apply your physical power to accomplish a task. If multiple people are working together, you can transfer your successes to others, improving their chances of success.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Dominate Opponent</strong> – Gain an advantageous position in a grapple or melee.</li><li><strong>Disarm Opponent</strong> – Force your opponent to drop their weapon or item.</li><li><strong>Cause Damage</strong> – Inflict additional damage to an object or structure.</li><li><strong>Create Opening</strong> – Distract or unbalance your opponent, setting them up for an ally’s attack.</li><li><strong>Perform Feats of Strength</strong> – Accomplish extraordinary physical feats beyond the usual scope of the task.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "strength",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740601129208,
+    "modifiedTime": 1740601999578,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!eFYBXl4g9ZcnRBoK"
+}

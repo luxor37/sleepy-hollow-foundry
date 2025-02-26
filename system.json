@@ -1,7 +1,7 @@
 {
-  "id": "mutant-year-zero",
-  "title": "Mutant Year Zero",
-  "description": "The Official Mutant Year Zero system for FoundryVTT!",
+  "id": "sleepy-hollow",
+  "title": "Sleepy Hollow",
+  "description": "The Official Sleepy Hollow system for FoundryVTT!",
   "version": "12.0.2",
   "compatibility": {
     "minimum": "12",
@@ -9,33 +9,24 @@
   },
   "authors": [
     {
-      "name": "HappySteve",
-      "discord": "shteff#8724",
+      "name": "luxor37",
+      "discord": "luxor37",
       "flags": {}
     }
   ],
   "esmodules": [
-    "module/myz.js"
+    "module/sh.js"
   ],
   "styles": [
-    "css/mutant-year-zero.css"
+    "css/sleepy-hollow.css"
   ],
   "packs": [
     {
       "name": "core-skills",
       "label": "Core Skills",
-      "system": "mutant-year-zero",
+      "system": "sleepy-hollow",
       "path": "packs/core-skills.db",
       "type": "Item",
-      "private": false,
-      "flags": {}
-    },
-    {
-      "name": "myz-macros",
-      "label": "MYZ Macros",
-      "system": "mutant-year-zero",
-      "path": "packs/myz-macros.db",
-      "type": "Macro",
       "private": false,
       "flags": {}
     }
@@ -46,51 +37,15 @@
       "name": "English",
       "path": "lang/en.json",
       "flags": {}
-    },
-    {
-      "lang": "se",
-      "name": "Swedish",
-      "path": "lang/se.json",
-      "flags": {}
-    },
-    {
-      "lang": "fr",
-      "name": "French",
-      "path": "lang/fr.json",
-      "flags": {}
-    },
-    {
-      "lang": "pt-br",
-      "name": "Portugues (Brasil)",
-      "path": "lang/pt-br.json",
-      "flags": {}
-    },
-    {
-      "lang": "pt-BR",
-      "name": "Português do Brasil",
-      "path": "lang/pt-br.json",
-      "flags": {}
-    },
-    {
-      "lang": "de",
-      "name": "Deutsch",
-      "path": "lang/de.json",
-      "flags": {}
-    },
-    {
-      "lang": "es",
-      "name": "Spanish",
-      "path": "lang/es.json",
-      "flags": {}
     }
   ],
-  "grid":{
-	  "distance": 1,
-	  "units": "m"
+  "grid": {
+    "distance": 1,
+    "units": "m"
   },
-  "background":"systems/mutant-year-zero/assets/img/splash-page.jpg",
-  "url": "https://github.com/superseva/mutant-year-zero",
-  "manifest": "https://github.com/superseva/mutant-year-zero/releases/latest/download/system.json",
-  "download": "https://github.com/superseva/mutant-year-zero/releases/download/v12.0.2/mutant-year-zero.zip",
+  "background": "systems/sleepy-hollow/assets/img/splash-page.jpg",
+  "url": "https://github.com/luxor37/sleepy-hollow-foundry",
+  "manifest": "https://github.com/luxor37/sleepy-hollow-foundry/releases/latest/download/system.json",
+  "download": "https://github.com/luxor37/sleepy-hollow-foundry/releases/download/v12.0.2/sleepy-hollow.zip",
   "license": "LICENSE"
 }

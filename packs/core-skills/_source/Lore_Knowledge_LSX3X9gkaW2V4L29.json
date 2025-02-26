@@ -1,0 +1,36 @@
+{
+  "name": "Lore/Knowledge",
+  "type": "skill",
+  "_id": "LSX3X9gkaW2V4L29",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Lore/Knowledge covers your understanding of local legends, historical events, and arcane lore specific to Sleepy Hollow. It aids in deciphering ancient manuscripts, identifying occult symbols, or recalling detailed information about the region.</p><p>You make a <strong>Lore/Knowledge test</strong> when attempting to uncover hidden truths, solve historical mysteries, or interpret obscure references. If multiple people are working on the same problem, you may transfer your successes to others, improving their chances of success.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Decipher Manuscripts</strong> – Quickly and accurately interpret ancient texts.</li><li><strong>Identify Symbols</strong> – Recognize and understand the significance of occult symbols.</li><li><strong>Recall Information</strong> – Instantly recall detailed information about local legends or historical events.</li><li><strong>Solve Mysteries</strong> – Piece together clues to solve complex puzzles or mysteries.</li><li><strong>Provide Context</strong> – Offer valuable background information to support decision-making.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "wits",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740602202922,
+    "modifiedTime": 1740602238203,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!LSX3X9gkaW2V4L29"
+}

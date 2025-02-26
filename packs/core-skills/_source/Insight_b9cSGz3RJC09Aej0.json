@@ -1,0 +1,36 @@
+{
+  "name": "Insight",
+  "type": "skill",
+  "_id": "b9cSGz3RJC09Aej0",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Insight reflects your ability to perceive others’ emotions and intentions. It aids in detecting lies, understanding motives, and assessing someone’s emotional state through their body language and speech.</p><p>You make an <strong>Insight test</strong> when you attempt to read another person, gauge their honesty, or discern their true feelings. If multiple people are observing the same individual, you may transfer your successes to others, improving their chances of success.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Detect Lies</strong> – Identify if someone is being deceitful.</li><li><strong>Understand Motives</strong> – Gain insight into someone’s true intentions.</li><li><strong>Assess Emotional State</strong> – Determine how someone is feeling based on subtle cues.</li><li><strong>Anticipate Reactions</strong> – Predict how someone will respond to a situation.</li><li><strong>Build Trust</strong> – Establish a connection by showing empathy and understanding.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "empathy",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740602038237,
+    "modifiedTime": 1740602048558,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!b9cSGz3RJC09Aej0"
+}

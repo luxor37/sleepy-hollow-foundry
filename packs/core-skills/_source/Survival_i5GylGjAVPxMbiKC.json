@@ -1,0 +1,36 @@
+{
+  "name": "Survival",
+  "type": "skill",
+  "_id": "i5GylGjAVPxMbiKC",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Survival is crucial for navigating and surviving in the wilderness or other hostile environments. It encompasses skills such as finding food and water sources, setting traps, identifying edible plants and wildlife, and constructing shelter to endure the elements.</p><p>You make a <strong>Survival test</strong> when faced with challenges related to wilderness survival, resource gathering, or environmental adaptation.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Find Resources</strong> – Locate food, water, and other essential supplies in the wild.</li><li><strong>Navigate Safely</strong> – Plot courses, avoid hazards, and find paths through unfamiliar terrain.</li><li><strong>Construct Shelter</strong> – Build temporary or makeshift shelters for protection from the elements.</li><li><strong>Set Traps</strong> – Lay traps to catch game or deter intruders.</li><li><strong>Identify Edibles</strong> – Recognize safe, edible plants and fungi for sustenance.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "wits",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740602581229,
+    "modifiedTime": 1740602590702,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!i5GylGjAVPxMbiKC"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Marksmanship",
+  "type": "skill",
+  "_id": "rdzJfhGMe0sKyB9I",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Marksmanship pertains to your skill with ranged weapons such as muskets, bows, or even throwing knives. It governs aiming, shooting accuracy, and handling firearms under pressure.</p><p>You make a <strong>Marksmanship test</strong> when attempting to hit a target at a distance, whether during a hunt or in combat. If multiple people are attacking the same target, you may transfer your successes to others, improving their chances of success.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Increase Damage</strong> – Inflict additional harm on your target.</li><li><strong>Called Shots</strong> – Aim for specific body parts to incapacitate or hinder the target.</li><li><strong>Pin Down</strong> – Force the target to seek cover, reducing their mobility.</li><li><strong>Suppress</strong> – Make the target hesitant to attack, reducing their effectiveness.</li><li><strong>Ricochet</strong> – Hit multiple targets with a single shot, if plausible.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "agility",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740602330563,
+    "modifiedTime": 1740602341650,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!rdzJfhGMe0sKyB9I"
+}

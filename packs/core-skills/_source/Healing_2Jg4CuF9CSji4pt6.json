@@ -1,0 +1,36 @@
+{
+  "name": "Healing",
+  "type": "skill",
+  "_id": "2Jg4CuF9CSji4pt6",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Healing is crucial for treating injuries and ailments. It includes basic first aid to stabilize wounds, treating infections, and diagnosing illnesses in a historical context.</p><p>You make a <strong>Healing test</strong> when you attempt to aid the injured or ill, using your knowledge and empathy to provide care. If multiple people are treating the same patient, you can transfer your successes to others, improving their chances of success.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Accelerate Recovery</strong> – Reduce the time needed for a patient to heal.</li><li><strong>Stabilize Critical Condition</strong> – Prevent a severely injured or ill character from worsening.</li><li><strong>Diagnose</strong> – Identify the nature of an ailment or injury accurately.</li><li><strong>Improvise Treatment</strong> – Use available materials to create effective remedies.</li><li><strong>Calm Patient</strong> – Alleviate a patient’s anxiety or pain, making them more cooperative.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "empathy",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740601672142,
+    "modifiedTime": 1740602012708,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!2Jg4CuF9CSji4pt6"
+}

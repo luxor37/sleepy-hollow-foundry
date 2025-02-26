@@ -6,7 +6,7 @@ import { onManageActiveEffect, prepareActiveEffectCategories } from '../helpers/
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class MYZActorSheet extends ActorSheet {
+export class SHActorSheet extends ActorSheet {
     diceRoller = new DiceRoller();
 
     /* -------------------------------------------- */
@@ -49,17 +49,14 @@ export class MYZActorSheet extends ActorSheet {
         // Initialize containers.
         const skills = [];
         const talents = [];
-        const secondary_functions = [];
-        const abilities = [];
-        const mutations = [];
-        const animal_powers = [];
-        const modules = [];
-        const contacts = [];
+        const notes = [];
+        const conditions = [];
+        const relationships = [];
+        const vehicules = [];
         const weapons = [];
         const armor = [];
-        const chassis = [];
         const gear = [];
-        const artifacts = [];
+        const consumables = [];
         const criticals = [];
 
         // Iterate through items, allocating to containers
@@ -72,28 +69,22 @@ export class MYZActorSheet extends ActorSheet {
                 skills.push(i);
             } else if (i.type === "talent") {
                 talents.push(i);
-            } else if (i.type === "secondary_function") {
-                secondary_functions.push(i);
-            } else if (i.type === "ability") {
-                abilities.push(i);
-            } else if (i.type === "mutation") {
-                mutations.push(i);
-            } else if (i.type === "animal_power") {
-                animal_powers.push(i);
-            } else if (i.type === "contact") {
-                contacts.push(i);
-            } else if (i.type === "module") {
-                modules.push(i);
+            } else if (i.type === "note") {
+                notes.push(i);
+            } else if (i.type === "condition") {
+                conditions.push(i);
+            } else if (i.type === "relationship") {
+                relationships.push(i);
+            } else if (i.type === "vehicule") {
+                vehicules.push(i);
             } else if (i.type === "weapon") {
                 weapons.push(i);
             } else if (i.type === "armor") {
                 armor.push(i);
-            } else if (i.type === "chassis") {
-                chassis.push(i);
             } else if (i.type === "gear") {
                 gear.push(i);
-            } else if (i.type === "artifact") {
-                artifacts.push(i);
+            } else if (i.type === "consumable") {
+                consumables.push(i);
             } else if (i.type === "critical") {
                 criticals.push(i);
             }
@@ -109,43 +100,36 @@ export class MYZActorSheet extends ActorSheet {
         skills.sort((a, b) => sortedBy[a.system.attribute] - sortedBy[b.system.attribute]);
 
         // sort skills alphabeticaly in attribute groups
-        skills.sort((a, b)=> {
-            if (a.system.attribute === b.system.attribute){
-              return a.system.skillKey < b.system.skillKey ? -1 : 1
-            } 
-          })
+        skills.sort((a, b) => {
+            if (a.system.attribute === b.system.attribute) {
+                return a.system.skillKey < b.system.skillKey ? -1 : 1
+            }
+        })
 
         // Assign and return
         context.skills = skills;
         context.talents = talents;
-        context.secondary_functions = secondary_functions;
-        context.abilities = abilities;
-        context.mutations = mutations;
-        context.animal_powers = animal_powers;
-        context.contacts = contacts;
-        context.modules = modules;
+        context.notes = notes;
+        context.conditions = conditions;
+        context.contacts = relationships;
+        context.vehicules = vehicules;
         context.weapons = weapons;
         context.armor = armor;
-        context.chassis = chassis;
         context.gear = gear;
-        context.artifacts = artifacts;
+        context.artifacts = consumables;
         context.criticals = criticals;
 
+        //TODO npc
         // pack inventory for NPCs
-        if(context.actor.type=="npc"){
-            context.npcInventory = [...gear, ...artifacts]
-            if(context.system.creatureType=="mutant"){
-                context.npcInventory = [...context.npcInventory, ...chassis]
-            }else if(context.system.creatureType=="robot"){
-                context.npcInventory = [...context.npcInventory, ...armor]
-            }
-            else if(context.system.creatureType=="animal"){
-                context.npcInventory = [...context.npcInventory, ...chassis]
-            }
-            else if(context.system.creatureType=="human"){
-                context.npcInventory = [...context.npcInventory, ...chassis]
-            }
-        }        
+        // if (context.actor.type == "npc") {
+        //     context.npcInventory = [...gear, ...consumables]
+        //     if (context.system.creatureType == "animal") {
+        //         context.npcInventory = [...context.npcInventory, ...chassis]
+        //     }
+        //     else if (context.system.creatureType == "human") {
+        //         context.npcInventory = [...context.npcInventory, ...chassis]
+        //     }
+        // }
     }
     /* -------------------------------------------- */
 
@@ -167,7 +151,7 @@ export class MYZActorSheet extends ActorSheet {
 
         html.find(".button-roll").click((ev) => {
             ev.preventDefault();
-            let rollName = "MYZ.CUSTOM_ROLL";
+            let rollName = "SH.CUSTOM_ROLL";
             RollDialog.prepareRollDialog({
                 rollName: rollName,
                 diceRoller: this.diceRoller,
@@ -246,9 +230,9 @@ export class MYZActorSheet extends ActorSheet {
         html.find(".roll-rot").click((event) => {
             let rotTotal = parseInt(this.actor.system.rot.value) + parseInt(this.actor.system.rot.permanent);
             RollDialog.prepareRollDialog({
-                rollName: game.i18n.localize("MYZ.ROT"),
+                rollName: game.i18n.localize("SH.ROT"),
                 diceRoller: this.diceRoller,
-                base: {default:rotTotal, total: rotTotal, modifiers: null}
+                base: { default: rotTotal, total: rotTotal, modifiers: null }
             });
         });
 
@@ -259,11 +243,7 @@ export class MYZActorSheet extends ActorSheet {
             let testName = weapon.name;
             let skill;
             if (weapon.system.category === "melee") {
-                if (this.actor.system.creatureType != "robot") {
-                    skill = this.actor.items.contents.find((i) => i.system.skillKey == "FIGHT");
-                } else {
-                    skill = this.actor.items.contents.find((i) => i.system.skillKey === "ASSAULT");
-                }
+                skill = this.actor.items.contents.find((i) => i.system.skillKey == "FIGHT");
             } else {
                 skill = this.actor.items.contents.find((i) => i.system.skillKey == "SHOOT");
             }
@@ -274,7 +254,7 @@ export class MYZActorSheet extends ActorSheet {
                     }
                 };
                 if (weapon.system.category === "melee") {
-                    skill.system.skillKey = this.actor.system.creatureType != "robot" ? "FIGHT" : "ASSAULT"
+                    skill.system.skillKey = "FIGHT"
                     skill.system.attribute = "strength";
                 } else {
                     skill.system.skillKey = "SHOOT"
@@ -292,9 +272,9 @@ export class MYZActorSheet extends ActorSheet {
                 attributeName: skill.system.attribute,
                 itemId,
                 diceRoller: this.diceRoller,
-                base: {default:attValue, total: rollModifiers.baseDiceTotal, modifiers: rollModifiers.modifiersToAttributes},
-                skill: {default:skill.system.value, total: rollModifiers.skillDiceTotal, modifiers: rollModifiers.modifiersToSkill},
-                gear: {default:0, total: rollModifiers.gearDiceTotal, modifiers: rollModifiers.modifiersToGear},                
+                base: { default: attValue, total: rollModifiers.baseDiceTotal, modifiers: rollModifiers.modifiersToAttributes },
+                skill: { default: skill.system.value, total: rollModifiers.skillDiceTotal, modifiers: rollModifiers.modifiersToSkill },
+                gear: { default: 0, total: rollModifiers.gearDiceTotal, modifiers: rollModifiers.modifiersToGear },
                 modifierDefault: weapon.system.skillBonus,
                 artifactDefault: weapon.system.artifactBonus || 0,
                 damage: weapon.system.damage,
@@ -306,9 +286,9 @@ export class MYZActorSheet extends ActorSheet {
         //Roll Armor
         html.find(".armor-roll").click((event) => {
             RollDialog.prepareRollDialog({
-                rollName: game.i18n.localize("MYZ.ARMOR"),
+                rollName: game.i18n.localize("SH.ARMOR"),
                 diceRoller: this.diceRoller,
-                gear: {default:this.actor.system.armorrating.value, total: this.actor.system.armorrating.value, modifiers: null}
+                gear: { default: this.actor.system.armorrating.value, total: this.actor.system.armorrating.value, modifiers: null }
             });
         });
 
@@ -322,7 +302,7 @@ export class MYZActorSheet extends ActorSheet {
                 rollName: testName,
                 itemId: itemId,
                 diceRoller: this.diceRoller,
-                gear: {default:armorItem.system.rating.value, total: armorItem.system.rating.value, modifiers: null}
+                gear: { default: armorItem.system.rating.value, total: armorItem.system.rating.value, modifiers: null }
             });
         });
 
@@ -335,7 +315,7 @@ export class MYZActorSheet extends ActorSheet {
             RollDialog.prepareRollDialog({
                 rollName: testName,
                 diceRoller: this.diceRoller,
-                gear: {default:armorItem.system.rot.value, total: armorItem.system.rot.value, modifiers: null}
+                gear: { default: armorItem.system.rot.value, total: armorItem.system.rot.value, modifiers: null }
             });
         });
 
@@ -348,11 +328,11 @@ export class MYZActorSheet extends ActorSheet {
         /* -------------------------------------------- */
         /* ADD LEFT CLICK CONTENT MENU
         /* -------------------------------------------- */
-        const editLabel = game.i18n.localize("MYZ.EDIT");
-        const deleteLabel = game.i18n.localize("MYZ.DELETE");
-        const toChatLabel = game.i18n.localize("MYZ.TOCHAT");
-        const stashLabel = game.i18n.localize("MYZ.STASH");
-        const equipLabel = game.i18n.localize("MYZ.EQUIP");
+        const editLabel = game.i18n.localize("SH.EDIT");
+        const deleteLabel = game.i18n.localize("SH.DELETE");
+        const toChatLabel = game.i18n.localize("SH.TOCHAT");
+        const stashLabel = game.i18n.localize("SH.STASH");
+        const equipLabel = game.i18n.localize("SH.EQUIP");
 
         let menu_items = [
             {
@@ -372,12 +352,12 @@ export class MYZActorSheet extends ActorSheet {
             {
                 icon: `<i class="fa-regular fa-box" title="${stashLabel}"></i>`,
                 name: '',
-                callback:async (t) => {
+                callback: async (t) => {
                     const item = this.actor.items.get(t.data("item-id"));
                     await this.actor.updateEmbeddedDocuments("Item", [this._toggleStashed(t.data("item-id"), item)]);
                 },
                 condition: (t) => {
-                    if (t.data("physical")=="1") {
+                    if (t.data("physical") == "1") {
                         return true;
                     } else {
                         return false;
@@ -395,7 +375,7 @@ export class MYZActorSheet extends ActorSheet {
 
         new ContextMenu(html, ".editable-item", menu_items);
 
-        new ContextMenu(html, ".editable-armor", [            
+        new ContextMenu(html, ".editable-armor", [
             {
                 icon: `<i class="fa-solid fa-shirt" title="${equipLabel}"></i>`,
                 name: '',
@@ -417,12 +397,12 @@ export class MYZActorSheet extends ActorSheet {
             });
         }*/
     }
-    
+
 
     async _updateNPCCreatureType(event) {
         let _creatureType = $(event.currentTarget).data("creature");
-        let img = `systems/mutant-year-zero/assets/ico/img-${_creatureType}.svg`
-        await this.actor.update({ "system.creatureType": _creatureType, "img": img});       
+        let img = `systems/sleepy-hollow/assets/ico/img-${_creatureType}.svg`
+        await this.actor.update({ "system.creatureType": _creatureType, "img": img });
         this.actor.sheet.render();
     }
 
@@ -505,9 +485,9 @@ export class MYZActorSheet extends ActorSheet {
         event.preventDefault();
         const attName = $(event.currentTarget).data("attribute");
         const attVal = this.actor.system.attributes[attName].value;
-        let rollName = `MYZ.ATTRIBUTE_${attName.toUpperCase()}_${this.actor.system.creatureType.toUpperCase()}`;
+        let rollName = `SH.ATTRIBUTE_${attName.toUpperCase()}_${this.actor.system.creatureType.toUpperCase()}`;
 
-        const rollModifiers = this._getAttibuteModifiers(attName)        
+        const rollModifiers = this._getAttibuteModifiers(attName)
         rollModifiers.skillDiceTotal = 0;
         rollModifiers.modifiersToSkill = [];
         rollModifiers.gearDiceTotal = 0;
@@ -517,9 +497,9 @@ export class MYZActorSheet extends ActorSheet {
             rollName: rollName,
             attributeName: attName,
             diceRoller: this.diceRoller,
-            base: {default:attVal, total: rollModifiers.baseDiceTotal, modifiers:rollModifiers.modifiersToAttributes},
-            skill: {default:0, total: rollModifiers.skillDiceTotal, modifiers:rollModifiers.modifiersToSkill},
-            gear: {default:0, total: rollModifiers.gearDiceTotal, modifiers:rollModifiers.modifiersToGear},            
+            base: { default: attVal, total: rollModifiers.baseDiceTotal, modifiers: rollModifiers.modifiersToAttributes },
+            skill: { default: 0, total: rollModifiers.skillDiceTotal, modifiers: rollModifiers.modifiersToSkill },
+            gear: { default: 0, total: rollModifiers.gearDiceTotal, modifiers: rollModifiers.modifiersToGear },
             modifierDefault: 0,
             applyedModifiers: null,
             actor: this.actor
@@ -549,16 +529,16 @@ export class MYZActorSheet extends ActorSheet {
             if (skill.system.skillKey == "") {
                 skillName = skill.name;
             } else {
-                skillName = game.i18n.localize(`MYZ.SKILL_${skill.system.skillKey}`);
+                skillName = game.i18n.localize(`SH.SKILL_${skill.system.skillKey}`);
             }
 
             RollDialog.prepareRollDialog({
                 rollName: skillName,
                 attributeName: attName,
                 diceRoller: this.diceRoller,
-                base: {default:attValue, total: rollModifiers.baseDiceTotal, modifiers: rollModifiers.modifiersToAttributes},
-                skill: {default:skill.system.value, total: rollModifiers.skillDiceTotal, modifiers: rollModifiers.modifiersToSkill},
-                gear: {default:0, total: rollModifiers.gearDiceTotal, modifiers: rollModifiers.modifiersToGear},
+                base: { default: attValue, total: rollModifiers.baseDiceTotal, modifiers: rollModifiers.modifiersToAttributes },
+                skill: { default: skill.system.value, total: rollModifiers.skillDiceTotal, modifiers: rollModifiers.modifiersToSkill },
+                gear: { default: 0, total: rollModifiers.gearDiceTotal, modifiers: rollModifiers.modifiersToGear },
                 modifierDefault: 0,
                 actor: this.actor,
                 skillItem: skill
@@ -599,16 +579,16 @@ export class MYZActorSheet extends ActorSheet {
 
     _getRollModifiers(skill) {
         // SKILL MODIFIERS
-        let skillDiceTotal = parseInt(skill.system.value);     
+        let skillDiceTotal = parseInt(skill.system.value);
         const itmMap = this.actor.items.filter(itm => itm.system.modifiers != undefined)
         const itemsThatModifySkill = itmMap.filter(i => i.system.modifiers[skill.system.skillKey] != 0)
         let modifiersToSkill = [];
 
-        if(skill.system.skillKey!=""){ 
+        if (skill.system.skillKey != "") {
             const skillDiceModifier = itemsThatModifySkill.reduce(function (acc, obj) {
                 modifiersToSkill.push({ 'type': obj.type, 'name': obj.name, 'value': obj.system.modifiers[skill.system.skillKey] })
                 return acc + obj.system.modifiers[skill.system.skillKey];
-            }, 0);        
+            }, 0);
             skillDiceTotal += parseInt(skillDiceModifier)
         }
         // ATTRIBUTE MODIFIERS  
@@ -618,7 +598,7 @@ export class MYZActorSheet extends ActorSheet {
         const itemsThatModifyGear = itmGMap.filter(i => i.system.gearModifiers[skill.system.skillKey] != 0)
         let modifiersToGear = []
         let gearDiceTotal = 0
-        if(skill.system.skillKey!=""){
+        if (skill.system.skillKey != "") {
             const gearDiceModifier = itemsThatModifyGear.reduce(function (acc, obj) {
                 modifiersToGear.push({ 'type': obj.type, 'name': obj.name, 'value': obj.system.gearModifiers[skill.system.skillKey] })
                 return acc + obj.system.gearModifiers[skill.system.skillKey];
@@ -636,7 +616,7 @@ export class MYZActorSheet extends ActorSheet {
         }
     }
 
-    _getAttibuteModifiers(attribute){
+    _getAttibuteModifiers(attribute) {
         const itmMap = this.actor.items.filter(itm => itm.system.modifiers != undefined)
         const itemsThatModifyAttribute = itmMap.filter(i => i.system.modifiers[attribute] != 0)
         let modifiersToAttributes = []
@@ -648,6 +628,6 @@ export class MYZActorSheet extends ActorSheet {
         let baseDiceTotal = parseInt(baseDice) + parseInt(baseDiceModifier);
         baseDiceTotal = Math.max(baseDiceTotal, 0)
         //if(baseDiceTotal<0) baseDiceTotal = 0;
-        return {baseDiceTotal: baseDiceTotal, modifiersToAttributes:modifiersToAttributes}
+        return { baseDiceTotal: baseDiceTotal, modifiersToAttributes: modifiersToAttributes }
     }
 }

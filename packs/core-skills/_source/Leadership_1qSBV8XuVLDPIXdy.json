@@ -1,0 +1,36 @@
+{
+  "name": "Leadership",
+  "type": "skill",
+  "_id": "1qSBV8XuVLDPIXdy",
+  "img": "systems/sleepy-hollow/assets/ico/skill.svg",
+  "system": {
+    "description": "<p>Leadership encompasses your capability to inspire, command, and coordinate groups. It is essential for rallying villagers, organizing defenses, or persuading others to follow your guidance.</p><p>You make a <strong>Leadership test</strong> when attempting to motivate a group, establish authority, or coordinate actions during a crisis. If multiple people are working towards the same goal, you can transfer your successes to others, improving their chances of success.</p><h3>Extra Successes Can Be Used To:</h3><ul><li><strong>Rally Troops</strong> – Boost the morale of a group, giving them a temporary advantage.</li><li><strong>Coordinate Actions</strong> – Improve the effectiveness of group efforts by organizing their actions.</li><li><strong>Persuade Followers</strong> – Convince others to follow your lead, even in dangerous situations.</li><li><strong>Establish Authority</strong> – Command respect and obedience from those around you.</li><li><strong>Inspire Confidence</strong> – Instill a sense of confidence and determination in your allies.</li></ul>",
+    "comment": "",
+    "cost": "0",
+    "value": 0,
+    "min": 0,
+    "attribute": "empathy",
+    "creatureType": "human",
+    "coreSkill": "",
+    "skillKey": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "4yokYfDyEuRDcvQ4": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "sleepy-hollow",
+    "systemVersion": "12.0.2",
+    "createdTime": 1740602169735,
+    "modifiedTime": 1740602180334,
+    "lastModifiedBy": "4yokYfDyEuRDcvQ4"
+  },
+  "_key": "!items!1qSBV8XuVLDPIXdy"
+}

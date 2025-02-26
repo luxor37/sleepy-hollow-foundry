@@ -2,25 +2,25 @@
     <div class="grid grid-3col dice-row">
         <div class="flexcol flex-group-center">
             <span>
-                <img class="dice-image base" src="systems/mutant-year-zero/ui/dice-base-6.png" />
+                <img class="dice-image base" src="systems/sleepy-hollow/ui/dice-base-6.png" />
                 <label for="base-input">{{localize base.name}}</label>
             </span>
             <input type="number" name="base-input" data-type="Number" id="{{base.type}}" value="{{base.total}}" />
         </div>
         <div class="flexcol flex-group-center">
             <span>
-                <img class="dice-image base" src="systems/mutant-year-zero/ui/dice-skill-6.png" />
+                <img class="dice-image base" src="systems/sleepy-hollow/ui/dice-skill-6.png" />
                 <label>{{localize skill.name}}</label>
             </span>
             <input type="number" data-type="Number" id="{{skill.type}}" value="{{skill.total}}" />
         </div>
         <div class="flexcol flex-group-center">
             <span>
-                <img class="dice-image base" src="systems/mutant-year-zero/ui/dice-gear-6.png" />
+                <img class="dice-image base" src="systems/sleepy-hollow/ui/dice-gear-6.png" />
                 <label>{{localize gear.name}}</label>
             </span>
             <input type="number" data-type="Number" id="{{gear.type}}" value="{{gear.total}}" />
-        </div>        
+        </div>
     </div>
 
     <div class="roll-bonus">
@@ -28,30 +28,30 @@
             <div>
                 {{#ifCond base.modifiers.length '>' 0}}
                 <ul class="roll-bonus-list">
-                    <li><em>{{localize 'MYZ.DEFAULT'}}: {{base.default}}</em></li>
+                    <li><em>{{localize 'SH.DEFAULT'}}: {{base.default}}</em></li>
                     {{#each base.modifiers as |item key|}}
                     <li><em>{{item.name}}: {{item.value}}</em></li>
                     {{/each}}
-            </ul>
-            {{/ifCond}}
+                </ul>
+                {{/ifCond}}
             </div>
             <div>
                 {{#ifCond skill.modifiers.length '>' 0}}
                 <ul class="roll-bonus-list">
-                    <li><em>{{localize 'MYZ.DEFAULT'}}: {{skill.default}}</em></li>
+                    <li><em>{{localize 'SH.DEFAULT'}}: {{skill.default}}</em></li>
                     {{#each skill.modifiers as |item key|}}
                     <li><em>{{item.name}}: {{item.value}}</em></li>
-                    {{/each}}               
+                    {{/each}}
                 </ul>
                 {{/ifCond}}
             </div>
             <div>
                 {{#ifCond gear.modifiers.length '>' 0}}
                 <ul class="roll-bonus-list">
-                    <li><em>{{localize 'MYZ.DEFAULT'}}: {{gear.default}}</em></li>
+                    <li><em>{{localize 'SH.DEFAULT'}}: {{gear.default}}</em></li>
                     {{#each gear.modifiers as |item key|}}
                     <li><em>{{item.name}}: {{item.value}}</em></li>
-                    {{/each}}               
+                    {{/each}}
                 </ul>
                 {{/ifCond}}
             </div>
@@ -63,8 +63,12 @@
         <input type="number" data-type="Number" id="{{modifier.type}}" value="{{modifier.value}}" />
     </div>
 
-    <div style="display: none; text-align: center; margin-bottom:5px" >
-        <em>Applyed Modifiers <i class="fa-regular fa-circle-question" data-tooltip="{{{applyedModifiers.info}}}" data-tooltip-direction="UP"></i></em>
+    <div style="display: none; text-align: center; margin-bottom:5px">
+        <em>Applyed Modifiers
+            <i class="fa-regular fa-circle-question" data-tooltip="{{{applyedModifiers.info}}}"
+                data-tooltip-direction="UP">
+            </i>
+        </em>
     </div>
 
 </div>

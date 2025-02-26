@@ -17,13 +17,13 @@ export class DiceRoller {
 
     /**
      * @param  {string} rollName   Display name for the roll
-     * @param  {number} base       Number of Base dice
+     * @param  {number} attribute  Number of attribute dice
      * @param  {number} skill      Number of Skill dice
      * @param  {number} gear       Number of Gear dice
      * @param  {number} modifier   Increase/decrease amount of skill dice
      * @param  {number} [damage=0] Weapon damage
      */
-    async roll({ rollName = "Roll Name", base = 0, skill = 0, gear = 0, modifier = 0, damage = null, actor = null, skillItem = null } = {}) {
+    async roll({ rollName = "Roll Name", attribute = 0, skill = 0, gear = 0, modifier = 0, damage = null, actor = null, skillItem = null } = {}) {
         this.dices = [];
         this.diceWithResult = [];
         this.diceWithNoResult = [];
@@ -40,13 +40,13 @@ export class DiceRoller {
         }
         computedSkill = Math.abs(computedSkill);
 
-        //let rollFormula = `${base}db + ${Math.abs(computedSkill)}ds + ${gear}dg`; // V11 way
+        //let rollFormula = `${attribute}da + ${Math.abs(computedSkill)}ds + ${gear}dg`; // V11 way
 
-        const _dicesToConsider = { db: base, ds: computedSkill, dg: gear };
+        const _dicesToConsider = { da: attribute, ds: computedSkill, dg: gear };
         let rollFormula = Object.entries(_dicesToConsider).reduce((formula, [key, value]) => {
             if (value !== 0) {
                 let newValue = value;
-                let newKey = key;        
+                let newKey = key;
                 formula += `${newValue}${newKey} + `;
             }
             return formula;
@@ -75,10 +75,10 @@ export class DiceRoller {
      * @param {Actor} [actor] The Actor that pushed the roll.
      */
     async push({ actor } = {}) {
-        const base = this.diceWithNoResult.filter((d) => d.diceType === "base").length;
+        const attribute = this.diceWithNoResult.filter((d) => d.diceType === "attribute").length;
         const skill = this.diceWithNoResult.filter((d) => d.diceType === "skill").length;
         const gear = this.diceWithNoResult.filter((d) => d.diceType === "gear").length;
-        let rollFormula = `${base}db + ${Math.abs(skill)}ds + ${gear}dg`;
+        let rollFormula = `${attribute}da + ${Math.abs(skill)}ds + ${gear}dg`;
         this.diceWithNoResult = [];
         let roll = new Roll(rollFormula);
         await roll.evaluate({ async: false });
@@ -89,8 +89,8 @@ export class DiceRoller {
         if (
             actor &&
             this.attribute &&
-            ['mutant', 'animal', 'robot', 'human', 'npc'].includes(actor.type) &&
-            game.settings.get("mutant-year-zero", "applyPushTrauma")
+            ['animal', 'human', 'npc'].includes(actor.type) &&
+            game.settings.get("sleepy-hollow", "applyPushTrauma")
         ) {
 
             const updateData = {};
@@ -107,8 +107,8 @@ export class DiceRoller {
                         updateData[`system.attributes.${this.attribute}.value`] = newVal;
                     }
                 }
-                // Adds Resources Points only to Mutants and Animals
-                if (['mutant', 'animal'].includes(actor.type) || ['mutant', 'animal'].includes(actor.system.creatureType)) {
+                // Adds Resources Points only to Animals
+                if (['animal'].includes(actor.type) || ['animal'].includes(actor.system.creatureType)) {
                     const resPts = actorData['resource_points'] ?? { value: 0, max: 10 };
                     if (resPts) {
                         const { value, max } = resPts;
@@ -126,7 +126,7 @@ export class DiceRoller {
         }
 
         // Applies pushed roll effect to the gear.
-        if (actor && this.itemId && game.settings.get("mutant-year-zero", "applyPushGearDamage")) {
+        if (actor && this.itemId && game.settings.get("sleepy-hollow", "applyPushGearDamage")) {
             const item = actor.items.get(this.itemId);
             const baneCount = this.countGearFailures() - this.gearDamageCount;
             if (item && baneCount > 0) {
@@ -151,7 +151,7 @@ export class DiceRoller {
         _roll.dice.forEach((d) => {
             d.results.forEach((r) => {
                 let successAndWeight = this.getSuccessAndWeight(r.result, this.mapDiceType(d.constructor.name));
-                if (r.result == 6 || (r.result == 1 && d.constructor.name != "MYZDieSkill")) {
+                if (r.result == 6 || (r.result == 1 && d.constructor.name != "SHDieSkill")) {
                     this.diceWithResult.push({
                         diceType: this.mapDiceType(d.constructor.name),
                         value: r.result,
@@ -172,13 +172,13 @@ export class DiceRoller {
     mapDiceType(dT) {
         let dType = "";
         switch (dT) {
-            case "MYZDieBase":
-                dType = "base";
+            case "SHDieAttribute":
+                dType = "attribute";
                 break;
-            case "MYZDieSkill":
+            case "SHDieSkill":
                 dType = "skill";
                 break;
-            case "MYZDieGear":
+            case "SHDieGear":
                 dType = "gear";
                 break;
             default:
@@ -221,18 +221,7 @@ export class DiceRoller {
         let numberOfSuccesses = this.countSuccesses();
         let numberOfFailures = this.countFailures();
         let numberOfGearFailures = this.countGearFailures();
-        let stuntText = ""
-        try{
-            stuntText = this.actor? CONFIG.MYZ.STUNTS[this.skillItem.system.skillKey][this.actor.system.creatureType] : "";
-            // If there is no stunt description for this type of creature return the first description you find            
-            if(stuntText=="" && CONFIG.MYZ.STUNTS[this.skillItem.system.skillKey]){
-                console.warn('Looking for other stunt description')
-                stuntText = this._findFirstNonEmptyStunt(CONFIG.MYZ.STUNTS[this.skillItem.system.skillKey])
-            }            
-        }catch(error){
-            // probably no skill included, or some custom skill
-            // console.warn(error)
-        }      
+
 
         let rollData = {
             name: this.lastRollName,
@@ -245,15 +234,14 @@ export class DiceRoller {
             dices: this.dices,
             actor: this.actor,
             skillItem: this.skillItem,
-            stuntText: stuntText
         };
-        const html = await renderTemplate("systems/mutant-year-zero/templates/chat/roll.html", rollData);
+        const html = await renderTemplate("systems/sleepy-hollow/templates/chat/roll.html", rollData);
         let chatData = {
             user: game.user.id,
             rollMode: game.settings.get("core", "rollMode"),
-            content: html,            
+            content: html,
             rolls: [_roll],
-            flags : {itemId: this.itemId}
+            flags: { itemId: this.itemId }
         };
         if (["gmroll", "blindroll"].includes(chatData.rollMode)) {
             chatData.whisper = ChatMessage.getWhisperRecipients("GM");
@@ -280,7 +268,7 @@ export class DiceRoller {
     countFailures() {
         let result = 0;
         this.dices.forEach((dice) => {
-            if (dice.value === 1 && dice.diceType === "base") {
+            if (dice.value === 1 && dice.diceType === "attribute") {
                 result++;
             }
         });
@@ -312,14 +300,5 @@ export class DiceRoller {
         this.traumaCount = 0;
         this.gearDamageCount = 0;
         return this;
-    }
-
-    _findFirstNonEmptyStunt(obj) {
-        for (let key in obj) {
-            if (obj[key] !== null && obj[key] !== "") {
-                return obj[key];
-            }
-        }
-        return "";
     }
 }

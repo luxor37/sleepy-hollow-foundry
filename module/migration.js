@@ -4,10 +4,10 @@
  */
 export const migrateWorld = async function () {
     ui.notifications.info(
-        `Applying MYZ System Migration for version ${game.system.data.version}. Please be patient and do not close your game or shut down your server.`,
+        `Applying SH System Migration for version ${game.system.data.version}. Please be patient and do not close your game or shut down your server.`,
         { permanent: true }
     );
-    /*
+
     // Migrate World Actors
     for (let a of game.actors.entities) {
         try {
@@ -42,11 +42,11 @@ export const migrateWorld = async function () {
         console.log(`Migrating Compendium ${p.name}`);
         await migrateCompendium(p);
     }
-    
+
     // Set the migration as complete
-    game.settings.set("mutant-year-zero", "systemMigrationVersion", game.system.data.version);
-    ui.notifications.info(`MYZ System Migration to version ${game.system.data.version} completed!`, { permanent: true });
-    */
+    game.settings.set("sleepy-hollow", "systemMigrationVersion", game.system.data.version);
+    ui.notifications.info(`SH System Migration to version ${game.system.data.version} completed!`, { permanent: true });
+
 };
 
 /* -------------------------------------------- */
@@ -95,7 +95,7 @@ export const migrateCompendium = async function (pack) {
  */
 export const migrateActorData = function (actor) {
     const updateData = {};
-    //_migrateActorResources(actor, updateData);
+    _migrateActorResources(actor, updateData);
     _migrateActorRelationships(actor, updateData);
     _addKnowNatureToNPC(actor, updateData);
 
@@ -122,10 +122,9 @@ export const migrateActorData = function (actor) {
  */
 export const migrateItemData = function (item) {
     const updateData = {};
-    _migrateItemToArtifact(item, updateData);
     _migrateSkillKey(item, updateData);
     // Remove deprecated fields
-    //_migrateRemoveDeprecated(item, updateData);
+    _migrateRemoveDeprecated(item, updateData);
     // Return the migrated update data
     return updateData;
 };
@@ -189,16 +188,6 @@ function _migrateActorRelationships(actor, updateData) {
     }
 }
 
-function _migrateItemToArtifact(item, updateData) {
-    if (item.type == "armor" || item.type == "weapon") {
-        //console.log(item.type);
-        if (!item.data.hasOwnProperty("dev_requirement")) {
-            updateData[`data.dev_requirement`] = "";
-            updateData[`data.dev_bonus`] = 0;
-        }
-    }
-}
-
 // ! ADDING SKILL KEY TO A SKILL
 function _migrateSkillKey(item, updateData) {
     if (item.type == "skill") {
@@ -232,71 +221,53 @@ function _addKnowNatureToNPC(actor, updateData) {
 function mapSkillKey(skillName) {
     let skillKey = "";
     switch (skillName) {
-        case "Endure":
-            skillKey = "ENDURE";
+        case "Animal Handling":
+            skillKey = "ANIMALHANDLING";
+            break;
+        case "Crafting":
+            skillKey = "CRAFTING";
             break;
         case "Force":
             skillKey = "FORCE";
             break;
-        case "Fight":
-            skillKey = "FIGHT";
+        case "Healing":
+            skillKey = "HEALING";
             break;
-        case "Sneak":
-            skillKey = "SNEAK";
+        case "Insight":
+            skillKey = "INSIGHT";
             break;
-        case "Move":
-            skillKey = "MOVE";
+        case "Leadership":
+            skillKey = "LEADERSHIP";
             break;
-        case "Shoot":
-            skillKey = "SHOOT";
+        case "Lore/Knowledge":
+            skillKey = "LOREKNOWLEDGE";
             break;
-        case "Scout":
-            skillKey = "SCOUT";
+        case "Marksmanship":
+            skillKey = "MARKSMANSHIP";
             break;
-        case "Comprehend":
-            skillKey = "COMPREHEND";
+        case "Melee":
+            skillKey = "MELEE";
             break;
-        case "Know the Zone":
-            skillKey = "KNOWTHEZONE";
+        case "Mobility":
+            skillKey = "MOBILITY";
             break;
-        case "Sense Emotion":
-            skillKey = "SENSEEMOTION";
+        case "Observation":
+            skillKey = "OBSERVATION";
             break;
-        case "Manipulate":
-            skillKey = "MANIPULATE";
+        case "Performance":
+            skillKey = "PERFORMANCE";
             break;
-        case "Heal":
-            skillKey = "HEAL";
+        case "Persuasion":
+            skillKey = "PERSUASION";
             break;
-        case "Dominate":
-            skillKey = "DOMINATE";
+        case "Stealth":
+            skillKey = "STEALTH";
             break;
-        case "Overload":
-            skillKey = "OVERLOAD";
+        case "Stamina":
+            skillKey = "STAMINA";
             break;
-        case "Assault":
-            skillKey = "ASSAULT";
-            break;
-        case "Infiltrate":
-            skillKey = "INFILTRATE";
-            break;
-        case "Scan":
-            skillKey = "SCAN";
-            break;
-        case "Datamine":
-            skillKey = "DATAMINE";
-            break;
-        case "Analyze":
-            skillKey = "ANALYZE";
-            break;
-        case "Question":
-            skillKey = "QUESTION";
-            break;
-        case "Interact":
-            skillKey = "INTERACT";
-            break;
-        case "Repair":
-            skillKey = "REPAIR";
+        case "Survival":
+            skillKey = "SURVIVAL";
             break;
         default:
             skillKey = "";

@@ -1,28 +1,25 @@
-<div class="myz chat-item">
+<div class="sh chat-item">
     <div class="border">
         {{#if isPushed}}
-        <h3>{{localize name}} - {{localize "MYZ.PUSHED"}}</h3>
+        <h3>{{localize name}} - {{localize "SH.PUSHED"}}</h3>
         {{else}}
         <h3>{{localize name}}</h3>
         {{/if}}
-        <h4>{{successes}}<i class="myz-radioactive"></i> | {{failures}}<i class="myz-biohazard"></i> | {{gearfailures}}<i class="myz-explosion"></i></h4>
+        <h4>{{successes}}<i class="sh-radioactive"></i> | {{failures}}<i class="sh-biohazard"></i> |
+            {{gearfailures}}<i class="sh-explosion"></i></h4>
         {{#if (greaterThan damage 0)}} {{#if (greaterThan successes 0)}}
         <h4 style="text-align: left">
-            {{localize "MYZ.DAMAGE"}} {{damage}} <span style="font-weight: 400">({{localize 'MYZ.STUNTS'}} {{substract successes 1}})</span>
+            {{localize "SH.DAMAGE"}} {{damage}} <span style="font-weight: 400">({{substract
+                successes 1}})</span>
         </h4>
         {{/if}} {{#unless (greaterThan successes 0)}}
-        <h4 style="text-align: left">{{localize "MYZ.DAMAGE"}} 0 <span style="font-weight: 400">({{localize 'MYZ.STUNTS'}} 0)</span></h4>
+        <h4 style="text-align: left">{{localize "SH.DAMAGE"}} 0 <span style="font-weight: 400">(0)</span></h4>
         {{/unless}} {{/if}}
         <div class="dices-result">
             {{#each dices as |dice|}}
-            <img src="systems/mutant-year-zero/ui/dice-{{dice.diceType}}{{#ifCond dice.success '==' -1}}-penalty{{/ifCond}}-{{dice.value}}.png" title="{{dice.success}}"/>
+            <img src="systems/sleepy-hollow/ui/dice-{{dice.diceType}}{{#ifCond dice.success '==' -1}}-penalty{{/ifCond}}-{{dice.value}}.png"
+                title="{{dice.success}}" />
             {{/each}}
         </div>
-        {{# if skillItem}}
-        <div>
-            <a class="stunts-trigger" style="display: flex; flex-direction: row; justify-content: flex-end; margin-top: 0.75em;">Stunts</a>
-            <div class="stunts" style="display: none">{{{stuntText}}}</div>
-        </div>
-        {{/if}}
     </div>
 </div>
